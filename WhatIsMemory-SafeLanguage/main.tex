@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 
-\title{Title}
+\title{What is a Memory-Safe Language? A Breakdown of Rust}
 \author{Author}
 \date{\today}
 
@@ -10,10 +10,27 @@
 \maketitle
 
 \begin{abstract}
-Your abstract here.
+Memory safety is a fundamental requirement for reliable software. This paper introduces the concept of memory-safe programming languages, exploring what features make a language memory-safe and why Rust is a key example. We outline Rust's ownership model, borrow checker, and other safety features, offering a beginner-friendly overview.
 \end{abstract}
 
 \section{Introduction}
 \label{sec:introduction}
+Understanding memory safety is essential for building robust systems. This paper breaks down the basic principles of memory-safe languages and explains how Rust applies these principles in practice.
+
+\section{What is Memory Safety?}
+\label{sec:what-is-memory-safety}
+A short overview of memory safety, common pitfalls such as buffer overflows and use-after-free, and how languages attempt to address them.
+
+\section{Rust's Approach}
+\label{sec:rust-approach}
+Summary of Rust's core safety mechanisms: ownership, borrowing, lifetimes, and how they provide guarantees at compile time.
+
+\section{Comparison with Other Languages}
+\label{sec:comparison}
+Brief notes comparing Rust with C/C++, Java, and other languages with respect to memory management and safety.
+
+\section{Conclusion}
+\label{sec:conclusion}
+A short closing summary discussing the importance of memory safety and the role Rust plays in modern software development.
 
 \end{document}
