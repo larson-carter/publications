@@ -161,7 +161,7 @@ However, these remain opt-in, best-effort approaches that cannot guarantee safet
 
 Rust's ownership system enforces memory safety through compile-time rules:
 
-\begin{table}[h]
+\begin{table}[ht]
 \centering
 \begin{tabular}{@{}ll@{}}
 \toprule
@@ -247,7 +247,7 @@ We analyze performance data from multiple sources:
 
 \subsection{Throughput Performance}
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -271,7 +271,7 @@ We analyze performance data from multiple sources:
 };
 \end{axis}
 \end{tikzpicture}
-\caption{Normalized runtime performance across languages based on Computer Language Benchmarks Game geometric mean (n=10 benchmark tasks, data collected 2023, 95\% CI ±3\%). Rust consistently lands within single-digit percentages of optimized C/C++ across the CLBG micro-benchmarks.}
+\caption{Normalized runtime performance across languages based on Computer Language Benchmarks Game geometric mean (n=10 benchmark tasks, data collected 2023, 95\% CI $\pm3\%$). Rust consistently lands within single-digit percentages of optimized C/C++ across the CLBG micro-benchmarks.}
 \label{fig:perf_comprehensive}
 \end{figure}
 
@@ -284,7 +284,7 @@ Key findings:
 
 \subsection{Latency Characteristics}
 
-\begin{table}[h]
+\begin{table}[ht]
 \centering
 \begin{tabular}{@{}lrrrr@{}}
 \toprule
@@ -379,7 +379,7 @@ Rust exhibits:
 
 \subsection{Quantitative Growth Metrics}
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -430,7 +430,7 @@ Rust exhibits:
 
 \end{axis}
 \end{tikzpicture}
-\caption{Rust adoption metrics from multiple developer surveys 2016-2024. Data aggregated from Stack Overflow (n≈90k), JetBrains (n≈26k), and Rust Foundation surveys (n≈9k). Error bars represent ±2 percentage points based on survey variability~\cite{stackoverflow2024,jetbrains2024,rustsurvey2024}}
+\caption{Rust adoption metrics from multiple developer surveys 2016-2024. Data aggregated from Stack Overflow ($n\approx90k$), JetBrains ($n\approx26k$), and Rust Foundation surveys ($n\approx9k$). Error bars represent $\pm2$ percentage points based on survey variability~\cite{stackoverflow2024,jetbrains2024,rustsurvey2024}}
 \label{fig:adoption_detailed}
 \end{figure}
 
