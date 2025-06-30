@@ -12,6 +12,9 @@
 \usepackage{booktabs}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{etoolbox}
+% Automatically start each section on a new page
+\preto\section{\clearpage}
 
 % Define comprehensive Rust syntax highlighting
 \lstdefinelanguage{Rust}{%
@@ -52,7 +55,7 @@
 
 \maketitle
 \begin{abstract}
-The pervasive nature of memory-safety vulnerabilities in systems software necessitates a fundamental shift in programming language design. This comprehensive analysis examines the theoretical foundations and empirical evidence supporting memory-safe programming languages, with particular emphasis on Rust's innovative ownership model. Through rigorous performance benchmarking, formal verification analysis, and examination of large-scale industrial deployments, we demonstrate that Rust's compile-time memory safety guarantees reduce approximately 70\% of security vulnerabilities endemic to C/C++ codebases while maintaining performance competitiveness. Our analysis synthesizes data from multiple longitudinal developer surveys (2018-2024) revealing Rust's adoption trajectory from low single digits to between 5\% and 13\% market penetration (depending on survey methodology), alongside consistently superior developer satisfaction metrics. We further examine the sociotechnical factors influencing memory-safe language adoption, including learning curve quantification, legacy system integration challenges, and industry transformation patterns. The convergence of academic validation through projects like RustBelt, empirical evidence from deployments at scale (Google, Microsoft, AWS), and regulatory pressure from cybersecurity agencies positions Rust as a prominent example of how programming language design can address systemic security vulnerabilities while maintaining the performance requirements of systems programming.
+The pervasive nature of memory-safety vulnerabilities in systems software necessitates a fundamental shift in programming language design. This comprehensive analysis examines the theoretical foundations and empirical evidence supporting memory-safe programming languages, with particular emphasis on Rust's innovative ownership model. Through rigorous performance benchmarking, formal verification analysis, and examination of large-scale industrial deployments, we demonstrate that Rust's compile-time memory safety guarantees reduce approximately 70\% of security vulnerabilities endemic to C/C++ codebases while maintaining performance competitiveness. Our analysis synthesizes data from multiple longitudinal developer surveys (2018-2024) revealing Rust's adoption trajectory from low single digits to 5\% (SlashData Q1 2024) to 12.6\% (Stack Overflow 2024) market penetration (depending on survey methodology), alongside consistently superior developer satisfaction metrics. We further examine the sociotechnical factors influencing memory-safe language adoption, including learning curve quantification, legacy system integration challenges, and industry transformation patterns. The convergence of academic validation through projects like RustBelt, empirical evidence from deployments at scale (Google, Microsoft, AWS), and regulatory pressure from cybersecurity agencies positions Rust as a prominent example of how programming language design can address systemic security vulnerabilities while maintaining the performance requirements of systems programming.
 \end{abstract}
 
 \tableofcontents
@@ -296,7 +299,7 @@ Go & 5.1 & 10.3 & 24.7 & 82.3 \\
 Java & 5.8 & 12.1 & 31.2 & 125.4 \\
 \bottomrule
 \end{tabular}
-\caption{Latency percentiles for TechEmpower Web Framework Benchmark Round 22 plaintext workload (n=1000 concurrent connections, 60-second warmup, lower is better)~\cite{techempower2023}}
+\caption{Latency percentiles for TechEmpower Web Framework Benchmark Round 22 (Nov 2023; more recent rounds show similar ordering) plaintext workload (n=1000 concurrent connections, 60-second warmup, lower is better)~\cite{techempower2023}}
 \label{tab:latency}
 \end{table}
 
@@ -321,7 +324,7 @@ Rust exhibits:
 
 \subsubsection{Google}
 \begin{itemize}
-    \item \textbf{Android}: Android's adoption of Rust (including a new Bluetooth stack) has so far yielded zero Rust-originated memory-safety CVEs~\cite{google2022android}
+    \item \textbf{Android}: Android's adoption of Rust (including a new Bluetooth stack) has so far yielded As of June~2025, no memory‑safety CVEs have been attributed to the Rust components shipped in Android user‑space.
     \begin{itemize}
         \item 1.5 million lines of Rust code in Android 13
     \end{itemize}
@@ -440,7 +443,7 @@ Surveys place Rust's "has used in past 12 months" figure between 5\% (SlashData)
 
 \subsubsection{Developer Satisfaction}
 \begin{itemize}
-    \item 8 consecutive years as "Most Loved Language" (Stack Overflow)
+    \item 9 consecutive years as "Most Loved Language" (Stack Overflow)
     \item Lowest migration-away rate (5\%) among systems languages~\cite{jetbrains2023}
     \item High correlation between usage duration and satisfaction
 \end{itemize}
@@ -497,7 +500,7 @@ The Rust ecosystem benefits from multiple formal verification approaches:
 
 \subsection{Package Ecosystem Growth}
 \begin{itemize}
-    \item 130,000+ packages on crates.io (2024)
+    \item >120,000 packages on crates.io (mid 2025)
     \item 45\% annual growth rate
     \item High-quality libraries for systems programming
 \end{itemize}
@@ -522,6 +525,39 @@ The Rust ecosystem benefits from multiple formal verification approaches:
     \item Integration with existing formal verification tools
 \end{itemize}
 
+\newpage
+\section{Concurrency Safety}
+\label{sec:concurrency-safety}
+
+Rust's \texttt{Send} and \texttt{Sync} marker traits encode—at the type level—whether a value may be transferred or shared across threads.  
+Coupled with ownership and borrowing, they allow the compiler to \emph{prove} the absence of data races, an advantage often dubbed \emph{fearless concurrency}.\footnote{\url{https://doc.rust-lang.org/book/ch16-00-concurrency.html}}  
+Empirical field data shows that vulnerabilities in production Rust cluster in \texttt{unsafe} blocks, with no data‑race CVEs filed against code written in safe Rust to date.\footnote{\url{https://security.googleblog.com/2024/09/eliminating-memory-safety-vulnerabilities-Android.html}}
+
+\subsection*{Tooling outlook}
+Research prototypes such as \textit{deepSURF} combine static analysis with LLM‑guided fuzzing to explore \texttt{unsafe} concurrency hotspots automatically.\footnote{\url{https://arxiv.org/abs/2506.15648}}
+
+\newpage
+\section{Hardware‐Assisted Memory Tagging}
+\label{sec:mte-cheri}
+
+Alternative hardware defences aim to retrofit memory protection onto existing C/C++ codebases:
+
+\begin{itemize}
+    \item \textbf{Arm MTE} tags 16‑byte granules with 4‑bit colours, catching spatial and temporal bugs with $\le$15\,\% overhead in production‑like configurations.\footnote{\url{https://developer.arm.com/documentation/108035/latest}}
+    \item \textbf{CHERI} re‑imagines pointers as hardware capabilities that carry bounds and permissions, enabling fine‑grained provenance tracking. Software must be recompiled for the CHERI ISA but otherwise requires minimal source changes.\footnote{\url{https://cheri-cpu.org}}
+\end{itemize}
+
+These approaches complement Rust: they harden residual \texttt{unsafe} code or legacy components that cannot readily be ported.
+
+\newpage
+\section{Regulatory Landscape}
+\label{sec:regulatory}
+
+Government agencies increasingly mandate memory‑safe components.  
+The U.S.~NSA/CISA ``Software Memory Safety'' guidance (2024) advises phasing out C and C++ for new development.  
+In the EU, the \textit{Cyber Resilience Act} draft foregrounds “minimising memory‑safety vulnerabilities” and names modern memory‑safe languages as a compliance route.\footnote{Regulation (EU) 2024/2847, recital (55). See \url{https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202402847}}  
+Procurement criteria for critical infrastructure are therefore already beginning to favour Rust.
+
 \section{Conclusion}
 
 The convergence of theoretical innovation, empirical validation, and industrial adoption positions Rust as a transformative force in systems programming. Our analysis demonstrates that:
@@ -537,6 +573,7 @@ As articulated by Mark Russinovich, CTO of Microsoft Azure: "Speaking of languag
 
 The transition to memory-safe systems programming represents not merely a technical evolution but a fundamental shift in how we approach software reliability and security. Rust, through its innovative design and proven results, offers a viable path forward—one where safety and performance are no longer mutually exclusive but mutually reinforcing.
 
+\newpage
 \bibliographystyle{plain}
 \begin{thebibliography}{99}
 
@@ -619,7 +656,7 @@ David Bugden and Julia Alahmar.
 
 \bibitem{techempower2023}
 TechEmpower.
-\newblock Web Framework Benchmarks Round 22.
+\newblock Web Framework Benchmarks Round 22 (Nov 2023; more recent rounds show similar ordering).
 \newblock 2023.
 \newblock \url{https://www.techempower.com/benchmarks/}
 
