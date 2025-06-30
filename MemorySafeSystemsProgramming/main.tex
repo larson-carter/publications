@@ -366,7 +366,7 @@ Rust exhibits:
 
 \subsubsection{Linux Kernel}
 \begin{itemize}
-    \item Rust support merged for experimental driver development (kernel 6.1+); currently limited to modules with no production NVMe or GPU drivers in mainline yet
+    \item Rust support merged for experimental driver development (kernel 6.1+); currently limited to modules with No NVMe or GPU drivers are in mainline yet; a first Wi‑Fi driver (MediaTek mt7921) and a DRM prototype are queued in \texttt{linux\-next} as of kernel 6.14‑rc.\cite{linux614}
     \item Google reports: "Rust could prevent 2/3 of Android kernel vulnerabilities"~\cite{google2023kernel}
     \item Active development of experimental drivers
 \end{itemize}
@@ -531,7 +531,7 @@ The Rust ecosystem benefits from multiple formal verification approaches:
 
 Rust's \texttt{Send} and \texttt{Sync} marker traits encode—at the type level—whether a value may be transferred or shared across threads.  
 Coupled with ownership and borrowing, they allow the compiler to \emph{prove} the absence of data races, an advantage often dubbed \emph{fearless concurrency}.\footnote{\url{https://doc.rust-lang.org/book/ch16-00-concurrency.html}}  
-Empirical field data shows that vulnerabilities in production Rust cluster in \texttt{unsafe} blocks, with no data‑race CVEs filed against code written in safe Rust to date.\footnote{\url{https://security.googleblog.com/2024/09/eliminating-memory-safety-vulnerabilities-Android.html}}
+Empirical field data shows that vulnerabilities in production Rust cluster in \texttt{unsafe} blocks, with Very few data‑race CVEs originate in safe Rust; the rare instances (e.g.\ CVE‑2020‑35905 in \texttt{futures\_util}) trace back to now‑fixed soundness bugs in library code.\cite{cve_2020_35905}\footnote{\url{https://security.googleblog.com/2024/09/eliminating-memory-safety-vulnerabilities-Android.html}}
 
 \subsection*{Tooling outlook}
 Research prototypes such as \textit{deepSURF} combine static analysis with LLM‑guided fuzzing to explore \texttt{unsafe} concurrency hotspots automatically.\footnote{\url{https://arxiv.org/abs/2506.15648}}
