@@ -32,9 +32,12 @@ To start a new paper run:
 This creates a `MyNewPaper` directory containing a copy of `template.tex` named
 `main.tex` which you can edit immediately.
 
+## Completed
+
+- MemorySafeSystemsProgramming: Memory-Safe Systems Programming: A Comprehensive Analysis of Rust’s Design, Performance, and Industry Impact
+
 ## Future Paper Ideas
 
-- What is a memory-safe Language?: A breakdown of Rust
 - Orthogonal: What does it mean in code and how to apply it?
 - Swift and SwiftUI: In Action, in Modern Development
 - Scaffolding the Mobile Dev: Clean, Modular Patterns for iOS & Android in 2025
