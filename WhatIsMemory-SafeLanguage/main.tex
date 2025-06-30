@@ -2,10 +2,12 @@
 \usepackage[utf8]{inputenc}
 \usepackage{geometry}
 \usepackage{hyperref}
+\usepackage{xurl}
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
 \usepackage{tikz}
 \usepackage{booktabs}
 \usepackage{amsmath}
@@ -43,7 +45,7 @@
 }
 
 \title{Memory-Safe Systems Programming:\\A Comprehensive Analysis of Rust's Design, Performance, and Industry Impact}
-\author{Larson Carter}
+\author{Larson Carter\thanks{\href{mailto:larson@carter.tech}{larson@carter.tech}}}
 \date{\today}
 
 \begin{document}
@@ -58,7 +60,7 @@ The pervasive nature of memory-safety vulnerabilities in systems software necess
 
 \section{Introduction: The Memory Safety Imperative}
 
-The software industry faces a critical juncture where traditional approaches to systems programming have proven inadequate for modern security requirements. Memory safety violations—including buffer overflows, use-after-free errors, and data races—constitute the dominant attack vector in systems software. Comprehensive analyses by major software vendors reveal that approximately 70\% of critical security vulnerabilities stem from memory safety issues~\cite{msrc2019survey,google2022android}.
+The software industry faces a critical juncture where traditional systems programming approaches fail to meet modern security requirements. Memory safety violations\textemdash such as buffer overflows, use-after-free errors, and data races\textemdash remain the dominant attack vector in systems software. Analyses by major vendors show that roughly 70\% of critical security vulnerabilities are due to memory safety issues~\cite{msrc2019survey,google2022android}.
 
 The economic and social costs of these vulnerabilities are staggering. The Heartbleed vulnerability (CVE-2014-0160), a buffer over-read in OpenSSL's heartbeat extension, exposed sensitive data across millions of servers worldwide, demonstrating how a single memory safety bug can have global implications~\cite{heartbleed2014}. This incident, among countless others, has catalyzed a fundamental reconsideration of programming language design for systems software.
 
