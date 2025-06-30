@@ -6,6 +6,15 @@
 \usepackage{listings}
 \usepackage{xcolor}
 
+% Define basic Rust syntax highlighting for listings
+\lstdefinelanguage{Rust}{%
+  morekeywords={let,fn,mut,drop,Box},%
+  sensitive=true,%
+  morecomment=[l]{//},%
+  morecomment=[s]{/*}{*/},%
+  morestring=[b]"%
+}
+
 \geometry{margin=1in}
 
 \lstset{
@@ -23,6 +32,19 @@
 \begin{document}
 
 \maketitle
+\begin{abstract}
+Memory-safety vulnerabilities remain a leading cause of software
+exploits. This paper introduces the core principles of memory-safe
+languages and explains how Rust's ownership and borrowing rules
+provide compile-time guarantees that prevent buffer overflows,
+use-after-free errors, and data races. We contrast Rust's approach with
+manual memory management in C/C++ and with the garbage collectors used
+by Java and Go. Real-world deployments and formal results demonstrate
+that Rust can deliver C-like performance while eliminating broad
+classes of security issues. We conclude with discussion of adoption
+trends and remaining challenges on the path toward a predominantly
+memory-safe software ecosystem.
+\end{abstract}
 \tableofcontents
 \newpage
 
