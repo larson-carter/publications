@@ -34,6 +34,7 @@
 \begin{abstract}
 This comprehensive analysis evaluates two leading next-generation firewall (NGFW) solutions—Palo Alto PA-3420 and Fortinet FortiGate (201G and 601F)—for deployment in a K-12 educational institution. The study addresses a critical decision facing a school district currently operating a single Palo Alto PA-3250 firewall without SSL decryption capabilities, as they prepare to upgrade their infrastructure to handle $\geq$4 Gbps of internet traffic with selective SSL/TLS decryption for approximately 500 faculty devices, with potential expansion to 3,000 total endpoints. Through a systematic evaluation across ten key dimensions—including security history, performance metrics, feature sets, scalability, total cost of ownership, compliance requirements, and operational considerations—this paper provides evidence-based recommendations for a 3-year deployment horizon. The analysis reveals that while both vendors offer enterprise-grade security capabilities, Fortinet's FortiGate solution provides superior cost-effectiveness with a 3-year TCO approximately 75\% lower than Palo Alto's offering, while maintaining comparable security efficacy and performance metrics. The findings indicate that FortiGate can effectively handle the district's current 4 Gbps requirement with 20\% SSL inspection and scale to 100\% decryption if needed, all while providing integrated networking features that could simplify the overall infrastructure. This research concludes with a recommendation favoring the Fortinet FortiGate solution based on its exceptional value proposition for budget-conscious educational institutions, without compromising essential security capabilities.
 \end{abstract}
+\tableofcontents
 
 \section{Introduction}
 \label{sec:introduction}
@@ -541,7 +542,320 @@ The dramatic cost savings—potentially \$80,000 or more over three years—can 
 
 For successful implementation, we recommend a phased migration approach including proof-of-concept testing, comprehensive staff training, and gradual SSL decryption expansion. With proper planning and execution, the district can achieve its security objectives while maintaining fiscal responsibility, ultimately creating a more sustainable and comprehensive security posture for protecting student and faculty digital resources.
 
-\bibliographystyle{ieeetr}
-\bibliography{references}
+\section*{Works Cited}
+\begin{thebibliography}{10}
 
+\bibitem{cve20191579}
+``{CVE-2019-1579 - Pan-os}.''
+  \url{https://www.cvedetails.com/cve/CVE-2019-1579/}, 2019.
+\newblock Accessed: 2025.
+
+\bibitem{threatpost2019}
+{Threatpost}, ``{Critical RCE Flaw in Palo Alto Gateways Hits Uber}.''
+  \url{https://threatpost.com/critical-rce-flaw-palo-alto-gateways-uber/146606/},
+  2019.
+\newblock Accessed: 2025.
+
+\bibitem{securityaffairs2019}
+{Security Affairs}, ``{Experts found critical RCE in Palo Alto Networks
+  GlobalProtect Product}.''
+  \url{https://securityaffairs.com/88770/hacking/palo-alto-networks-globalprotect-rce.html},
+  2019.
+\newblock Accessed: 2025.
+
+\bibitem{fortra2020}
+{Fortra}, ``{CVE-2020-2021 Palo Alto Networks PAN-OS}.''
+  \url{https://www.fortra.com/blog/cve-2020-2021-palo-alto-networks-pan-os},
+  2020.
+\newblock Accessed: 2025.
+
+\bibitem{portswigger2020}
+{PortSwigger}, ``{Exploit developed for critical Palo Alto authentication
+  flaw}.''
+  \url{https://portswigger.net/daily-swig/exploit-developed-for-critical-palo-alto-authentication-flaw},
+  2020.
+\newblock Accessed: 2025.
+
+\bibitem{cisapalo2024}
+{The Hacker News}, ``{CISA Warns of Critical Fortinet Flaw as Palo Alto and
+  Cisco Issue}.''
+  \url{https://thehackernews.com/2024/10/cisa-warns-of-critical-fortinet-flaw-as.html},
+  2024.
+\newblock Accessed: 2025.
+
+\bibitem{twic2024}
+{nGuard}, ``{This Week in Cybersecurity (TWiC): Exploit Surge – Palo Alto,
+  Fortinet, SonicWall, and CISA}.''
+  \url{https://nguard.com/sa-this-week-in-cybersecurity-exploit-surge-palo-alto-fortinet-sonicwall-and-cisa/},
+  2024.
+\newblock Accessed: 2025.
+
+\bibitem{cve20243400}
+{Cybersecurity Dive}, ``{Palo Alto Networks warns firewall vulnerability is
+  under active exploitation}.''
+  \url{https://www.cybersecuritydive.com/news/palo-alto-networks-firewall-exploitation/740193/},
+  2024.
+\newblock Accessed: 2025.
+
+\bibitem{cybersecuritydive2024}
+{Cybersecurity Dive}, ``{Palo Alto Networks warns firewall vulnerability is
+  under active exploitation}.''
+  \url{https://www.cybersecuritydive.com/news/palo-alto-networks-firewall-exploitation/740193/},
+  2024.
+\newblock Accessed: 2025.
+
+\bibitem{theregister2024}
+{The Register}, ``{Mystery Palo Alto Networks 0-day RCE now actively
+  exploited}.''
+  \url{https://www.theregister.com/2024/11/15/palo_alto_networks_firewall_zeroday/},
+  2024.
+\newblock Accessed: 2025.
+
+\bibitem{cve20240012}
+{The Register}, ``{Mystery Palo Alto Networks 0-day RCE now actively
+  exploited}.''
+  \url{https://www.theregister.com/2024/11/15/palo_alto_networks_firewall_zeroday/},
+  2024.
+\newblock Accessed: 2025.
+
+\bibitem{paloalto2024}
+{The Register}, ``{Mystery Palo Alto Networks 0-day RCE now actively
+  exploited}.''
+  \url{https://www.theregister.com/2024/11/15/palo_alto_networks_firewall_zeroday/},
+  2024.
+\newblock Accessed: 2025.
+
+\bibitem{securityweek2024}
+{SecurityWeek}, ``{Hackers Exploit Palo Alto Firewall Vulnerability Day After
+  Disclosure}.''
+  \url{https://www.securityweek.com/hackers-exploit-palo-alto-firewall-vulnerability-day-after-disclosure/},
+  2024.
+\newblock Accessed: 2025.
+
+\bibitem{hackersexploit2024}
+{SecurityWeek}, ``{Hackers Exploit Palo Alto Firewall Vulnerability Day After
+  Disclosure}.''
+  \url{https://www.securityweek.com/hackers-exploit-palo-alto-firewall-vulnerability-day-after-disclosure/},
+  2024.
+\newblock Accessed: 2025.
+
+\bibitem{bleepingcomputer2022}
+{BleepingComputer}, ``{Hackers leak configs and VPN credentials for 15,000
+  FortiGate devices}.''
+  \url{https://www.bleepingcomputer.com/news/security/hackers-leak-configs-and-vpn-credentials-for-15-000-fortigate-devices/},
+  2022.
+\newblock Accessed: 2025.
+
+\bibitem{nvd20196693}
+{National Vulnerability Database}, ``{CVE-2019-6693 Detail - NVD}.''
+  \url{https://nvd.nist.gov/vuln/detail/CVE-2019-6693}, 2019.
+\newblock Accessed: 2025.
+
+\bibitem{cisafortios2025}
+{Cybersecurity News}, ``{CISA Warns of FortiOS Hard-Coded Credentials
+  Vulnerability}.''
+  \url{https://cybersecuritynews.com/fortinet-fortios-hard-coded-credentials-vulnerability/},
+  2025.
+\newblock Accessed: 2025.
+
+\bibitem{cybergc2020}
+{Cyber.gc.ca}, ``{Exploitation of Fortinet FortiOS vulnerabilities (CISA, FBI)
+  - update 1}.''
+  \url{https://www.cyber.gc.ca/en/alerts/exploitation-fortinet-fortios-vulnerabilities-cisa-fbi},
+  2020.
+\newblock Accessed: 2025.
+
+\bibitem{securityweek2022}
+{SecurityWeek}, ``{Data From 15000 Fortinet Firewalls Leaked by Hackers}.''
+  \url{https://www.securityweek.com/data-from-15000-fortinet-firewalls-leaked-by-hackers/},
+  2022.
+\newblock Accessed: 2025.
+
+\bibitem{fortinetvuln2023}
+{nGuard}, ``{This Week in Cybersecurity (TWiC): Exploit Surge – Palo Alto,
+  Fortinet, SonicWall, and CISA}.''
+  \url{https://nguard.com/sa-this-week-in-cybersecurity-exploit-surge-palo-alto-fortinet-sonicwall-and-cisa/},
+  2023.
+\newblock Accessed: 2025.
+
+\bibitem{bleepingcomputer2025}
+{BleepingComputer}, ``{Over 16,000 Fortinet devices compromised with symlink
+  backdoor}.''
+  \url{https://www.bleepingcomputer.com/news/security/over-16-000-fortinet-devices-compromised-with-symlink-backdoor/},
+  2025.
+\newblock Accessed: 2025.
+
+\bibitem{fortinet27997}
+{Fortinet}, ``{Analysis of CVE-2023-27997 and Clarifications on Volt Typhoon
+  Campaign}.''
+  \url{https://www.fortinet.com/blog/psirt-blogs/analysis-of-cve-2023-27997-and-clarifications-on-volt-typhoon-campaign},
+  2023.
+\newblock Accessed: 2025.
+
+\bibitem{cybergc27997}
+{Cyber.gc.ca}, ``{Alert – Vulnerability impacting FortiGate/FortiOS
+  (CVE-2023-27997)}.''
+  \url{https://www.cyber.gc.ca/en/alerts-advisories/vulnerability-impacting-fortigatefortios-cve-2023-27997},
+  2023.
+\newblock Accessed: 2025.
+
+\bibitem{fortinetthreat2025}
+{Fortinet}, ``{Analysis of Threat Actor Activity | Fortinet Blog}.''
+  \url{https://www.fortinet.com/blog/psirt-blogs/analysis-of-threat-actor-activity},
+  2025.
+\newblock Accessed: 2025.
+
+\bibitem{fortinetgartner2023}
+{IEEE Communications Society}, ``{Fortinet and Palo Alto Networks are leaders
+  in Gartner Magic Quadrant for Network Firewalls}.''
+  \url{https://techblog.comsoc.org/2023/01/15/fortinet-and-palo-alto-networks-are-leaders-in-gartner-magic-quadrant-for-network-firewalls/},
+  2023.
+\newblock Accessed: 2025.
+
+\bibitem{gartnerquadrant2023}
+{Palo Alto Networks}, ``{Gartner Magic Quadrant Archives - Palo Alto Networks
+  Blog}.''
+  \url{https://www.paloaltonetworks.com/blog/tag/gartner-magic-quadrant/},
+  2023.
+\newblock Accessed: 2025.
+
+\bibitem{nsslabs2019}
+{Fortinet}, ``{Fortinet Next-Generation Firewall versus Palo Alto Networks
+  NGFW}.''
+  \url{https://www.fortinet.com/products/next-generation-firewall/fortigate-vs-pan},
+  2019.
+\newblock Accessed: 2025.
+
+\bibitem{cyberratings2023}
+{CyberRatings}, ``{CyberRatings Enterprise Firewall Comparative Report}.''
+  \url{https://www.exclusive-networks.com/nl/wp-content/uploads/sites/21/2023/05/CyberRatings_Enterprise-Firewall_Comparative-Report_April2023.pdf},
+  2023.
+\newblock Accessed: 2025.
+
+\bibitem{cyberratings2023exclusivenetworks}
+{Exclusive Networks}, ``{CyberRatings Enterprise Firewall Comparative
+  Report}.''
+  \url{https://www.exclusive-networks.com/nl/wp-content/uploads/sites/21/2023/05/CyberRatings_Enterprise-Firewall_Comparative-Report_April2023.pdf},
+  2023.
+\newblock Accessed: 2025.
+
+\bibitem{gartnerpeer2024}
+{Gartner Peer Insights}, ``{FortiGate: Next Generation Firewall (NGFW) vs
+  PA-Series - Gartner}.''
+  \url{https://www.gartner.com/reviews/market/network-firewalls/compare/product/fortigate-next-generation-firewall-ngfw-vs-pa-series},
+  2024.
+\newblock Accessed: 2025.
+
+\bibitem{pa3400datasheet}
+{Palo Alto Networks}, ``{PA-3400 Series Datasheet}.''
+  \url{https://www.paloguard.com/datasheets/pa-3400-series.pdf}, 2024.
+\newblock Accessed: 2025.
+
+\bibitem{fortigate201gspec}
+{AVFirewalls}, ``{Fortinet FortiGate 201G Series}.''
+  \url{https://www.avfirewalls.com/FortiGate-201G.asp}, 2024.
+\newblock Accessed: 2025.
+
+\bibitem{fortigate201g}
+{AVFirewalls}, ``{Fortinet FortiGate 201G Series | AVFirewalls.com}.''
+  \url{https://www.avfirewalls.com/FortiGate-201G.asp}, 2024.
+\newblock Accessed: 2025.
+
+\bibitem{fortigate601f}
+{AVFirewalls}, ``{Fortinet FortiGate 601F | AVFirewalls.com}.''
+  \url{https://www.avfirewalls.com/FortiGate-601F.asp}, 2024.
+\newblock Accessed: 2025.
+
+\bibitem{fortigate600fseries}
+{Fortinet}, ``{FortiGate 600F Series Data Sheet}.''
+  \url{https://www.enbitcon.com/media/79/c3/82/1659335969/fortigate-600f-series.pdf},
+  2024.
+\newblock Accessed: 2025.
+
+\bibitem{paloaltourl2024}
+{Palo Alto Networks}, ``{Advanced URL Filtering},'' 2024.
+\newblock ML-powered URL categorization service.
+
+\bibitem{paloaltoappid2024}
+{Palo Alto Networks}, ``{App-ID Technology},'' 2024.
+\newblock Application identification and control technology.
+
+\bibitem{fortinetbundles2024}
+{Fortinet}, ``{Fortinet FortiGate Bundles and Licensing},'' 2024.
+\newblock Various bundle options including UTP and Enterprise Protection.
+
+\bibitem{paloaltoatp2024}
+{Palo Alto Networks}, ``{Advanced Threat Prevention: Support for Zero-day
+  Exploit Prevention}.''
+  \url{https://docs.paloaltonetworks.com/whats-new/new-features/may-2024/atp-support-for-zero-day-exploit-prevention},
+  2024.
+\newblock Accessed: 2025.
+
+\bibitem{pa3420cdw}
+{Corporate Armor}, ``{Palo Alto Networks PA-3420 Next-Gen Firewall}.''
+  \url{https://www.corporatearmor.com/product/palo-alto-networks-pa-3420-next-gen-firewall/},
+  2024.
+\newblock Accessed: 2025.
+
+\bibitem{fortigate201gavfirewalls}
+{AVFirewalls}, ``{Fortinet FortiGate 201G Series}.''
+  \url{https://www.avfirewalls.com/FortiGate-201G.asp}, 2024.
+\newblock Accessed: 2025.
+
+\bibitem{fortigate600fpdfseries}
+{Fortinet}, ``{FortiGate 600F Series Data Sheet}.''
+  \url{https://www.enbitcon.com/media/79/c3/82/1659335969/fortigate-600f-series.pdf},
+  2024.
+\newblock Accessed: 2025.
+
+\bibitem{redditpalopricing}
+{Reddit Community}, ``{Palo Alto pricing : r/networking - Reddit}.''
+  \url{https://www.reddit.com/r/networking/comments/1jqjaws/palo_alto_pricing/},
+  2024.
+\newblock Accessed: 2025.
+
+\bibitem{exnpanuk2024}
+{Exclusive Networks}, ``{EXN PAN UK April 2024 GBP Pricelist}.''
+  \url{https://assets.applytosupply.digitalmarketplace.service.gov.uk/g-cloud-14/documents/92331/428618805667936-pricing-document-2024-05-01-1317.pdf},
+  2024.
+\newblock Accessed: 2025.
+
+\bibitem{paloaltopanext}
+{CDW}, ``{Palo Alto Networks PA-3400 Series PA-3420 - security appliance}.''
+  \url{https://www.cdw.com/product/palo-alto-networks-pa-3400-series-pa-3420-security-appliance/6895618},
+  2024.
+\newblock Accessed: 2025.
+
+\bibitem{fortigate601fallfirewalls}
+{AllFirewalls}, ``{FortiGate-601F (FG-601F) | Buy for less with consulting and
+  support}.''
+  \url{https://www.allfirewalls.de/en/Brands/Fortinet/FortiGate-Firewalls/Mid-Range-Firewalls/FG-601F-FortiGate-601F.html},
+  2024.
+\newblock Accessed: 2025.
+
+\bibitem{fortinetk12}
+{Fortinet}, ``{K-12 Cybersecurity –Top Internet Security Software |
+  Fortinet}.''
+  \url{https://www.fortinet.com/solutions/industries/education/k12}, 2024.
+\newblock Accessed: 2025.
+
+\bibitem{fortinetcipawhitepaper}
+{Fortinet}, ``{Meeting CIPA compliance with Fortinet}.''
+  \url{https://www.govconnection.com/media/evjjond4/713995-fortinet-k12-cipa-compliance-solution-brief.pdf},
+  2024.
+\newblock Accessed: 2025.
+
+\bibitem{splunkpaloalto}
+{Splunk}, ``{Splunk App for Palo Alto Networks},'' 2024.
+\newblock Integration for log analysis and visualization.
+
+\bibitem{wildfire2024}
+{Palo Alto Networks}, ``{WildFire Malware Analysis Service},'' 2024.
+\newblock Cloud-based malware analysis with 5-minute signature updates.
+
+\bibitem{comparisontable}
+{Internal Analysis}, ``{3-Year TCO Comparison Analysis},'' 2025.
+\newblock Based on vendor pricing and education discounts.
+
+\end{thebibliography}
 \end{document}
